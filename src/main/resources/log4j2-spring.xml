@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<properties>
+		<property name="PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} |-%-5level	[%thread] %c [%L] -| %msg%n</property>
+	</properties>
+	<!--先定义所有的appender(输出器) -->
+	<appenders>
+	    <!-- 输出到控制台 -->
+	    <!--输出日志的格式，引用自定义模板 PATTERN -->
+		<Console
+			name="CONSOLE"
+			target="system_out">
+			<PatternLayout pattern="${PATTERN}" />
+		</Console>
+	</appenders>
+
+	<loggers>
+		<logger
+			name="com.xue"
+			level="debug" />
+		<root level="info">
+			<appenderref ref="CONSOLE" />
+		</root>
+	</loggers>
+
+</configuration>
